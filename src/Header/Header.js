@@ -7,12 +7,19 @@ import SideNav from '../Pages/Shared/SideNav/SideNav';
 import { useContext } from 'react';
 import { AuthContext } from '../contexts/AuthProvider/AuthProvider';
 import { FaUser } from 'react-icons/fa';
-import { Image } from 'react-bootstrap';
+import { Button, Image } from 'react-bootstrap';
 
 
 
 const Header = () => {
-    const { user } = useContext(AuthContext)
+    const { user, logOut } = useContext(AuthContext)
+
+    const handleLogOut = () => {
+        logOut()
+            .then(() => { })
+            .catch(error => console.error(error))
+    }
+
     return (
         <Navbar collapseOnSelect expand="lg" className='mb-4' bg="dark" variant="dark">
             <Container>
@@ -28,10 +35,25 @@ const Header = () => {
                     </Nav>
                     <Nav>
                         {/* <Nav.Link><Link to='/signIn'>Sign in</Link></Nav.Link> */}
-                        <Nav.Link>{user?.displayName}</Nav.Link>
+                        <Nav.Link>
+                            {
+                                user?.uid ?
+                                    <>
+                                        <span> {user?.displayName}</span>
+                                        <Button variant="light" onClick={handleLogOut}>LogOut</Button>
+                                    </>
+                                    :
+                                    <>
+                                        <Link to='/login'>Login</Link>
+                                        <Link to='/register'>Register</Link>
+                                    </>
+                            }
+
+
+                        </Nav.Link>
                         <Nav.Link eventKey={2} href="#memes">
-                            {user.photoURL ?
-                                <Image style={{ height: '30px' }} roundedCircle src={user.photoURL}></Image>
+                            {user?.photoURL ?
+                                <Image style={{ height: '30px' }} roundedCircle src={user?.photoURL}></Image>
                                 :
                                 <FaUser></FaUser>
 
