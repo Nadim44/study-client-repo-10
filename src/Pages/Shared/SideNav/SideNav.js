@@ -14,13 +14,14 @@ const SideNav = () => {
 
     return (
         <div>
-            <h3>All Courses: {courses.length}</h3>
+            < h3 >Total Courses: {courses.length}</h3>
+
             <div>
                 {courses.map(course => <p key={course.id}>
                     <Link to={`/course/${course.id}`}>{course.name}</Link>
                 </p>)}
             </div>
-        </div>
+        </div >
     );
 };
 

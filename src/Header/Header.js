@@ -3,17 +3,20 @@ import { Link } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import SideNav from '../Pages/Shared/SideNav/SideNav';
 
 
 
 const Header = () => {
     return (
-        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+        <Navbar collapseOnSelect expand="lg" className='mb-4' bg="dark" variant="dark">
             <Container>
-                <Navbar.Brand >React-Bootstrap</Navbar.Brand>
+                <Navbar.Brand >Study World</Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
+
+                        <Nav.Link><Link to='/'>Home</Link></Nav.Link>
                         <Nav.Link><Link to='/courses'>Courses</Link></Nav.Link>
                         <Nav.Link><Link to='/fqa'>FQA</Link></Nav.Link>
                         <Nav.Link><Link to='/blog'>Blog</Link></Nav.Link>
@@ -24,6 +27,9 @@ const Header = () => {
                             Dank memes
                         </Nav.Link>
                     </Nav>
+                    <div className='d-lg-none'>
+                        <SideNav></SideNav>
+                    </div>
                 </Navbar.Collapse>
             </Container>
             {/* <div>
