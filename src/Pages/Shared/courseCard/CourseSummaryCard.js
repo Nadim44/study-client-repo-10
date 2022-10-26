@@ -7,7 +7,7 @@ const CourseSummaryCard = ({ course }) => {
     const { _id, category_id, title, summary, image_url, rating, total_view } = course;
     return (
         <Card className=" mb-5" >
-            <Card.Header>{title}</Card.Header>
+            <Card.Header>Subject Name: <h2>{title}</h2></Card.Header>
             <Card.Body>
                 <Card.Title>Special title treatment</Card.Title>
                 <Card.Img varient='top' src={image_url} />
@@ -18,7 +18,6 @@ const CourseSummaryCard = ({ course }) => {
                             <p>{summary.slice(0, 200) + '...'} <Link to={`/details/${_id}`}>Read More</Link> </p>
                             :
                             <p>{summary}</p>
-
                     }
                 </Card.Text>
 

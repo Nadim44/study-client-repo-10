@@ -4,10 +4,15 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import SideNav from '../Pages/Shared/SideNav/SideNav';
+import { useContext } from 'react';
+import { AuthContext } from '../contexts/AuthProvider/AuthProvider';
+import { FaUser } from 'react-icons/fa';
+import { Image } from 'react-bootstrap';
 
 
 
 const Header = () => {
+    const { user } = useContext(AuthContext)
     return (
         <Navbar collapseOnSelect expand="lg" className='mb-4' bg="dark" variant="dark">
             <Container>
@@ -22,9 +27,15 @@ const Header = () => {
                         <Nav.Link><Link to='/blog'>Blog</Link></Nav.Link>
                     </Nav>
                     <Nav>
-                        <Nav.Link><Link to='/signIn'>Sign in</Link></Nav.Link>
+                        {/* <Nav.Link><Link to='/signIn'>Sign in</Link></Nav.Link> */}
+                        <Nav.Link>{user?.displayName}</Nav.Link>
                         <Nav.Link eventKey={2} href="#memes">
-                            Dank memes
+                            {user.photoURL ?
+                                <Image style={{ height: '30px' }} roundedCircle src={user.photoURL}></Image>
+                                :
+                                <FaUser></FaUser>
+
+                            }
                         </Nav.Link>
                     </Nav>
                     <div className='d-lg-none'>
