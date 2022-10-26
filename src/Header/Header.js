@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
+
 
 
 const Header = () => {
@@ -17,27 +17,22 @@ const Header = () => {
                         <Nav.Link><Link to='/courses'>Courses</Link></Nav.Link>
                         <Nav.Link><Link to='/fqa'>FQA</Link></Nav.Link>
                         <Nav.Link><Link to='/blog'>Blog</Link></Nav.Link>
-                        {/* <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
-                            <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.2">
-                                Another action
-                            </NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-                            <NavDropdown.Divider />
-                            <NavDropdown.Item href="#action/3.4">
-                                Separated link
-                            </NavDropdown.Item>
-                        </NavDropdown> */}
-
                     </Nav>
                     <Nav>
-                        <Nav.Link href="#deets">More deets</Nav.Link>
+                        <Nav.Link><Link to='/signIn'>Sign in</Link></Nav.Link>
                         <Nav.Link eventKey={2} href="#memes">
                             Dank memes
                         </Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Container>
+            {/* <div>
+                    <Link to='/courses'>Courses</Link>
+                    <Link to='/fqa'>FQA</Link>
+                    <Link to='/blog'>Blog</Link>
+                    <Link to='/signIn'>Sign in</Link>
+                    <Link to='/register'>Register</Link>
+                </div> */}
         </Navbar>
     );
 };
@@ -48,10 +43,3 @@ export default Header;
 
 
 
-{/* <div>
-                <Link to='/courses'>Courses</Link>
-                <Link to='/fqa'>FQA</Link>
-                <Link to='/blog'>Blog</Link>
-                <Link to='/signIn'>Sign in</Link>
-                <Link to='/register'>Register</Link>
-            </div> */}
