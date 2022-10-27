@@ -2,9 +2,7 @@ import { Container } from "react-bootstrap";
 import { createBrowserRouter, Link, Navigate } from "react-router-dom";
 import Blog from "../../components/Blog";
 import Courses from "../../components/Courses";
-import FQA from "../../components/FQA";
-
-import SignIn from "../../components/SignIn/SignIn";
+import FAQ from "../../components/FAQ";
 import Main from "../../layout/Main";
 import Course from "../../Pages/Course/Course";
 import Details from "../../Pages/Details/Details";
@@ -19,7 +17,10 @@ export const routes = createBrowserRouter([
         path: '/',
         element: <Main></Main>,
         children: [
-
+            {
+                path: '/',
+                element: <Home></Home>
+            },
             {
                 path: '/courses',
                 element: <PrivateRoute><Courses></Courses></PrivateRoute>,
@@ -48,26 +49,6 @@ export const routes = createBrowserRouter([
                 element: <TernsAndCondition></TernsAndCondition>
             }
 
-            // {
-            //     path: '/courses',
-            //     element: <Courses></Courses>
-            // },
-            // {
-            //     path: '/fqa',
-            //     element: <FQA></FQA>
-            // },
-            // {
-            //     path: '/blog',
-            //     element: <Blog></Blog>
-            // },
-            // {
-            //     path: '/signIn',
-            //     element: <SignIn></SignIn>
-            // },
-            // {
-            //     path: '/register',
-            //     element: <Register></Register>
-            // }
 
         ]
     },
@@ -76,9 +57,10 @@ export const routes = createBrowserRouter([
         element: <Blog></Blog>
     },
     {
-        path: '/home',
-        element: <Home></Home>
+        path: '/faq',
+        element: <FAQ></FAQ>
     },
+
     {
         path: '*',
         element: <Container>

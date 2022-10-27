@@ -12,6 +12,7 @@ import { useState } from 'react';
 
 
 
+
 const Header = () => {
     const { user, logOut } = useContext(AuthContext)
     const [theme, setTheme] = useState(false)
@@ -39,24 +40,26 @@ const Header = () => {
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
 
-                        <Nav.Link><Link to='/home'>Home</Link></Nav.Link>
+                        <Nav.Link><Link to='/'>Home</Link></Nav.Link>
                         <Nav.Link><Link to='/courses'>Courses</Link></Nav.Link>
-                        <Nav.Link><Link to='/fqa'>FQA</Link></Nav.Link>
+                        <Nav.Link><Link to='/faq'>FAQ</Link></Nav.Link>
                         <Nav.Link><Link to='/blog'>Blog</Link></Nav.Link>
                     </Nav>
                     <Nav>
-                        {/* <Nav.Link><Link to='/signIn'>Sign in</Link></Nav.Link> */}
+
                         <Nav.Link>
                             {
                                 user?.uid ?
                                     <>
-                                        <span> {user?.displayName}</span>
+                                        <span className='d-none'> {user?.displayName}</span>
                                         <Button variant="light" onClick={handleLogOut}>LogOut</Button>
                                     </>
                                     :
                                     <>
-                                        <Link to='/login'>Login</Link>
-                                        <Link to='/register'>Register</Link>
+                                        <div >
+                                            <span className='m-2'><Link to='/login'>Login</Link></span>
+                                            <Link to='/register'>Register</Link>
+                                        </div>
                                     </>
                             }
 
@@ -84,13 +87,7 @@ const Header = () => {
                     </div>
                 </Navbar.Collapse>
             </Container>
-            {/* <div>
-                    <Link to='/courses'>Courses</Link>
-                    <Link to='/fqa'>FQA</Link>
-                    <Link to='/blog'>Blog</Link>
-                    <Link to='/signIn'>Sign in</Link>
-                    <Link to='/register'>Register</Link>
-                </div> */}
+
         </Navbar>
     );
 };
