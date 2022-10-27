@@ -6,13 +6,24 @@ import Navbar from 'react-bootstrap/Navbar';
 import SideNav from '../Pages/Shared/SideNav/SideNav';
 import { useContext } from 'react';
 import { AuthContext } from '../contexts/AuthProvider/AuthProvider';
-import { FaUser } from 'react-icons/fa';
+import { FaArrowRight, FaUser } from 'react-icons/fa';
 import { Button, Image } from 'react-bootstrap';
+import { useState } from 'react';
 
 
 
 const Header = () => {
     const { user, logOut } = useContext(AuthContext)
+    const [theme, setTheme] = useState(false)
+
+    const handleTheme = () => {
+        if (theme === false) {
+            setTheme(true)
+        }
+        else {
+            setTheme(false)
+        }
+    }
 
     const handleLogOut = () => {
         logOut()
@@ -21,7 +32,7 @@ const Header = () => {
     }
 
     return (
-        <Navbar collapseOnSelect expand="lg" className='mb-4' bg="dark" variant="dark">
+        <Navbar collapseOnSelect expand="lg" className='mb-4' bg="light" variant="light">
             <Container>
                 <Navbar.Brand >Study World</Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -59,6 +70,14 @@ const Header = () => {
 
                             }
                         </Nav.Link>
+                        {
+                            theme ?
+                                <Link onClick={handleTheme} className='text-decoration-none mx-auto ms-3 mt-2'><FaArrowRight></FaArrowRight> Light</Link>
+                                :
+                                <Link onClick={handleTheme} className='text-decoration-none ms-3 mt-2'>
+                                    <FaArrowRight></FaArrowRight>
+                                    Dark</Link>
+                        }
                     </Nav>
                     <div className='d-lg-none'>
                         <SideNav></SideNav>
