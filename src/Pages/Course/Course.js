@@ -6,7 +6,7 @@ const Course = () => {
     const allCourse = useLoaderData()
     return (
         <div>
-            {/* <h1>This course has: {allCourse.length}</h1> */}
+
             {
                 allCourse.map(course => <CourseSummaryCard
                     key={course._id}

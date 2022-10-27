@@ -27,7 +27,6 @@ const Login = () => {
                 console.log(user)
                 form.reset();
                 setError('');
-                // navigate('/courses')
                 navigate(from, { replace: true });
             })
             .catch(error => {

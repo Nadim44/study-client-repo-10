@@ -5,7 +5,7 @@ import { FaStar, FaEye } from "react-icons/fa";
 
 
 const CourseSummaryCard = ({ course }) => {
-    const { _id, category_id, title, summary, image_url, rating, total_view } = course;
+    const { _id, title, summary, image_url, rating, total_view } = course;
     return (
         <Card className=" mb-5" >
 
@@ -13,7 +13,7 @@ const CourseSummaryCard = ({ course }) => {
             <Card.Body>
                 <Card.Img varient='top' src={image_url} />
                 <Card.Text>
-                    {/* {summary} */}
+
                     {
                         summary.length > 200 ?
                             <p>{summary.slice(0, 200) + '...'} <Link to={`/details/${_id}`}>Read More</Link> </p>
