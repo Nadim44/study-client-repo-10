@@ -3,13 +3,14 @@ import Card from 'react-bootstrap/Card';
 import { Link } from 'react-router-dom';
 import { FaStar, FaEye } from "react-icons/fa";
 
+
 const CourseSummaryCard = ({ course }) => {
     const { _id, category_id, title, summary, image_url, rating, total_view } = course;
     return (
         <Card className=" mb-5" >
+
             <Card.Header>Subject Name: <h2>{title}</h2></Card.Header>
             <Card.Body>
-                <Card.Title>Special title treatment</Card.Title>
                 <Card.Img varient='top' src={image_url} />
                 <Card.Text>
                     {/* {summary} */}
@@ -33,6 +34,12 @@ const CourseSummaryCard = ({ course }) => {
                 </div>
 
             </Card.Footer>
+            <div className='m-2' >
+                <a href="download.pdf"
+                    download="download.pdf">
+                    <button className='btn btn-primary'> download</button>
+                </a>
+            </div>
         </Card>
     );
 };

@@ -10,6 +10,7 @@ const Main = () => {
             <Header></Header>
 
             <Container>
+
                 <Row>
                     <Col lg='4' className='d-none d-lg-block'>
                         <SideNav></SideNav>
@@ -17,7 +18,6 @@ const Main = () => {
                     <Col lg='8' className='border 2px solid red'>
                         <Outlet></Outlet>
                     </Col>
-
                 </Row>
             </Container>
         </div >

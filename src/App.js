@@ -6,8 +6,7 @@ import { routes } from './Routes/Routes/Routes';
 function App() {
   return (
     <div className="">
-      <h1 className='text-primary'>start assignment!!</h1>
-      {/* <Header></Header> */}
+
       <RouterProvider router={routes}></RouterProvider>
     </div>
   );
