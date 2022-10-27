@@ -34,11 +34,17 @@ const CourseSummaryCard = ({ course }) => {
                 </div>
 
             </Card.Footer>
-            <div className='m-2' >
-                <a href="download.pdf"
-                    download="download.pdf">
-                    <button className='btn btn-primary'> download</button>
-                </a>
+            <div className='d-flex justify-content-between'>
+                <div className='m-2'>
+                    <button className='btn btn-success'><Link to='/register'><span className='text-white text-decoration-none'>Premium Purchase</span></Link></button>
+                </div>
+                <div className='m-2' >
+                    <a href="download.pdf"
+                        download="download.pdf">
+                        <button className='btn btn-primary'> Download</button>
+                    </a>
+                </div>
+
             </div>
         </Card>
     );
