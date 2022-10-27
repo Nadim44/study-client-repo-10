@@ -1,4 +1,5 @@
-import { createBrowserRouter, Navigate } from "react-router-dom";
+import { Container } from "react-bootstrap";
+import { createBrowserRouter, Link, Navigate } from "react-router-dom";
 import Blog from "../../components/Blog";
 import Courses from "../../components/Courses";
 import FQA from "../../components/FQA";
@@ -77,6 +78,15 @@ export const routes = createBrowserRouter([
     {
         path: '/home',
         element: <Home></Home>
+    },
+    {
+        path: '*',
+        element: <Container>
+            <div className="mt-4">
+                <h1>Your link is not found. Please go to <Link to='/register'> Register</Link> </h1>
+            </div>
+        </Container>
+
     }
 
 ])
