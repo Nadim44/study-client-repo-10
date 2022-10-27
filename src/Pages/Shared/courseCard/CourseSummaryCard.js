@@ -9,7 +9,7 @@ const CourseSummaryCard = ({ course }) => {
     return (
         <Card className=" mb-5" >
 
-            <Card.Header>Subject Name: <h2>{title}</h2></Card.Header>
+            <Card.Header>Subject Name:- <h1>{title}</h1></Card.Header>
             <Card.Body>
                 <Card.Img varient='top' src={image_url} />
                 <Card.Text>

@@ -7,7 +7,6 @@ const Courses = () => {
 
     return (
         <div>
-            <h2>Courses details: {allCourse.length}</h2>
             {
                 allCourse.map(course => <CourseSummaryCard
                     key={course._id}
