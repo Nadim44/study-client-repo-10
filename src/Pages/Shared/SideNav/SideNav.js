@@ -9,7 +9,7 @@ const SideNav = () => {
     const [courses, setCourses] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/course-categories')
+        fetch('https://assignment-10-server-tau-six.vercel.app/course-categories')
             .then(res => res.json())
             .then(data => setCourses(data))
     }, [])
