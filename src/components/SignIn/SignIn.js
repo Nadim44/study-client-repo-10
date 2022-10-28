@@ -35,7 +35,7 @@ const SignIn = () => {
     return (
         <div>
             <ButtonGroup vertical className='mt-4'>
-                <Button onClick={handleGoogleSignIn} className='mb-2' variant="outline-primary"><FaGoogle /> Signin with Google</Button>
+                <Button onClick={handleGoogleSignIn} className='mb-2' variant="outline-success"><FaGoogle /> Signin with Google</Button>
                 <Button onClick={handleGithubSignIn} className='mb-2' variant="outline-dark"><FaGithub /> Signin with Github</Button>
             </ButtonGroup>
         </div>
