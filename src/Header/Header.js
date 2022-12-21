@@ -15,16 +15,16 @@ import { useState } from 'react';
 
 const Header = () => {
     const { user, logOut } = useContext(AuthContext)
-    const [theme, setTheme] = useState(false)
+    // const [theme, setTheme] = useState(false)
 
-    const handleTheme = () => {
-        if (theme === false) {
-            setTheme(true)
-        }
-        else {
-            setTheme(false)
-        }
-    }
+    // const handleTheme = () => {
+    //     if (theme === false) {
+    //         setTheme(true)
+    //     }
+    //     else {
+    //         setTheme(false)
+    //     }
+    // }
 
     const handleLogOut = () => {
         logOut()
@@ -39,7 +39,6 @@ const Header = () => {
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
-
                         <Nav.Link><Link to='/'>Home</Link></Nav.Link>
                         <Nav.Link><Link to='/courses'>Courses</Link></Nav.Link>
                         <Nav.Link><Link to='/faq'>FAQ</Link></Nav.Link>
@@ -73,14 +72,14 @@ const Header = () => {
 
                             }
                         </Nav.Link>
-                        {
+                        {/* {
                             theme ?
                                 <Link onClick={handleTheme} className='text-decoration-none mx-auto ms-3 mt-2'><FaArrowRight></FaArrowRight> Light</Link>
                                 :
                                 <Link onClick={handleTheme} className='text-decoration-none ms-3 mt-2'>
                                     <FaArrowRight></FaArrowRight>
                                     Dark</Link>
-                        }
+                        } */}
                     </Nav>
                     <div className='d-lg-none'>
                         <SideNav></SideNav>

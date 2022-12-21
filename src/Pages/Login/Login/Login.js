@@ -31,7 +31,8 @@ const Login = () => {
             })
             .catch(error => {
                 console.error(error)
-                setError(error.message);
+                // setError(error.message);
+                setError(' Something is wrong');
             })
     }
 
@@ -55,6 +56,7 @@ const Login = () => {
                 {error}
             </Form.Text>
         </Form>
+
     );
 };
 

@@ -7,7 +7,7 @@ const FAQ = () => {
         <div>
             <Header></Header>
             <Container>
-                <h1 className='m-2'>Some Important Question!!!</h1>
+                <h1 className='m-2'>Some Important Questions!!!</h1>
                 <div>
                     <div className='bg-success p-2 rounded mb-4'>
                         <h3>
@@ -32,12 +32,6 @@ const FAQ = () => {
                             Q:- Can you tell me names of 3 authentication method?
                         </h3>
                         <p>Answer: <span> 1. Google 2.Github 3.Email & Password</span></p>
-                    </div>
-                    <div className='bg-success p-2 rounded mb-4'>
-                        <h3>
-                            Q:- What is Firebase?
-                        </h3>
-                        <p>Answer: <span></span></p>
                     </div>
                 </div>
             </Container>

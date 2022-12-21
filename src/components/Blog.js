@@ -18,7 +18,7 @@ const Blog = () => {
                     <h3>
                         Q:- Why are you using firebase? What other options do you have to implement authentication?
                     </h3>
-                    <p>Answer: <span>The Firebase Realtime Database lets you build rich, collaborative applications by allowing secure access to the database directly from client-side code....
+                    <p>Answer: <span>The Firebase Realtime Database lets you build rich, collaborative applications by allowing secure access to the database directly from client-side code.
                         Other ways to authenticate can be through cards, retina scans, voice recognition, and fingerprints.</span></p>
                 </div>
                 <div className='bg-success p-2 rounded mb-4'>
